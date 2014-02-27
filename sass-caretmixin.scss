@@ -1,0 +1,30 @@
+.caret-base {
+    content: "";
+    display: inline-block;
+    height: 0;
+    vertical-align: top;
+    width: 0; }
+  
+@mixin caret( $color, $size, $pos ) {
+    @extend .caret-base;
+
+    @if $pos == "right" {
+        border-left:  $size solid $color;
+        border-bottom: $size solid transparent;
+        border-top:  $size solid transparent; }
+  
+    @else if $pos == "left" {
+        border-right:  $size solid $color;
+        border-bottom: $size solid transparent;
+        border-top:  $size solid transparent; }  
+  
+    @else if $pos == "top" {
+        border-bottom:  $size solid $color;
+        border-left: $size solid transparent;
+        border-right:  $size solid transparent; }  
+    
+    @else if $pos == "bottom" {
+        border-top:  $size solid $color;
+        border-left: $size solid transparent;
+        border-right:  $size solid transparent; } 
+}
